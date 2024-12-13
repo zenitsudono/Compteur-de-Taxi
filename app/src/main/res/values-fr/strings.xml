@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Taxi</string>
+    <string name="distance">Distance</string>
+    <string name="time">Temps</string>
+    <string name="total_fare">Prix total</string>
+    <string name="start_ride">Démarrer la course</string>
+    <string name="end_ride">Terminer la Course</string>
+    <string name="driver_profile">Profil du chauffeur</string>
+    <string name="notification_title">Course terminée</string>
+    <string name="notification_message">Prix total: %1$s DH\nDistance: %2$s km\nTemps: %3$s</string>
+    <string name="permission_rationale">La permission de localisation est nécessaire pour suivre votre course</string>
+    <string name="permission_denied">Permission de localisation refusée. Veuillez l\'activer dans les paramètres.</string>
+    <string name="driver_name">Nom du chauffeur</string>
+    <string name="driver_age">Âge</string>
+    <string name="license_type">Type de permis</string>
+    <string name="scan_qr">Scanner le Code QR</string>
+    <string name="base_fare">Tarif de base: 2.5 DH</string>
+    <string name="per_km">Par KM: 1.5 DH</string>
+    <string name="per_minute">Par minute: 0.5 DH</string>
+    <string name="select_language">Sélectionner la langue</string>
+    <string name="stop_ride">Arrêter la course</string>
+    <string name="phone_number">Numéro de téléphone</string>
+    <string name="car_info">Info voiture</string>
+</resources>

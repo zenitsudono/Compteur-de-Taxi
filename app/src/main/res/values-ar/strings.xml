@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">تاكسي</string>
+    <string name="distance">المسافة</string>
+    <string name="time">الوقت</string>
+    <string name="total_fare">التكلفة الإجمالية</string>
+    <string name="start_ride">بدء الرحلة</string>
+    <string name="end_ride">إنهاء الرحلة</string>
+    <string name="driver_profile">ملف السائق</string>
+    <string name="notification_title">اكتملت الرحلة</string>
+    <string name="notification_message">التكلفة الإجمالية: %1$s درهم\nالمسافة: %2$s كم\nالوقت: %3$s</string>
+    <string name="permission_rationale">إذن الموقع مطلوب لتتبع رحلة سيارة الأجرة الخاصة بك</string>
+    <string name="permission_denied">تم رفض إذن الموقع. يرجى تمكينه في الإعدادات.</string>
+    <string name="driver_name">اسم السائق</string>
+    <string name="driver_age">العمر</string>
+    <string name="license_type">نوع الرخصة</string>
+    <string name="scan_qr">مسح رمز QR</string>
+    <string name="base_fare">التعريفة الأساسية: 2.5 درهم</string>
+    <string name="per_km">لكل كم: 1.5 درهم</string>
+    <string name="per_minute">لكل دقيقة: 0.5 درهم</string>
+    <string name="select_language">اختر اللغة</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="car_info">معلومات السيارة</string>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Taxi</string>
+    <string name="distance">Distance</string>
+    <string name="time">Time</string>
+    <string name="total_fare">Total Fare</string>
+    <string name="start_ride">Start Ride</string>
+    <string name="end_ride">End Ride</string>
+    <string name="driver_profile">Driver Profile</string>
+    <string name="notification_title">Ride Completed</string>
+    <string name="notification_message">Total fare: %1$s DH\nDistance: %2$s km\nTime: %3$s</string>
+    <string name="permission_rationale">Location permission is required to track your taxi ride</string>
+    <string name="permission_denied">Location permission denied. Please enable it in settings.</string>
+    <string name="driver_name">Driver Name</string>
+    <string name="driver_age">Age</string>
+    <string name="license_type">License Type</string>
+    <string name="scan_qr">Scan QR Code</string>
+    <string name="base_fare">Base Fare: 2.5 DH</string>
+    <string name="per_km">Per KM: 1.5 DH</string>
+    <string name="per_minute">Per Minute: 0.5 DH</string>
+    <string name="stop_ride">Stop Ride</string>
+    <string name="select_language">Select Language</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="car_info">Car Info</string>
+    <string-array name="languages">
+        <item>English</item>
+        <item>Français</item>
+        <item>العربية</item>
+    </string-array>
+</resources>
