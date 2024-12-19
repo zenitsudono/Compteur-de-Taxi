@@ -22,4 +22,8 @@
     <string name="stop_ride">Arrêter la course</string>
     <string name="phone_number">Numéro de téléphone</string>
     <string name="car_info">Info voiture</string>
+    <string name="tariff_information">Information de Tariff</string>
+    <string name="_0_00_dh">0.00 DH</string>
+    <string name="_00_00">00:00</string>
+    <string name="_0_0_km">0.0 km</string>
 </resources>

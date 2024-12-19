@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <!-- Top Yellow Banner -->
         <View
             android:id="@+id/topBanner"
             android:layout_width="match_parent"
@@ -17,6 +18,7 @@
             android:background="@color/taxi_yellow"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- Language Spinner Card -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardViewLanguage"
             android:layout_width="wrap_content"
@@ -37,6 +39,7 @@
                 android:padding="8dp" />
         </androidx.cardview.widget.CardView>
 
+        <!-- Profile Section -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardViewProfile"
             android:layout_width="match_parent"
@@ -142,6 +145,7 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <!-- Tariff Card -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardViewTariff"
             android:layout_width="match_parent"
@@ -199,6 +203,7 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <!-- QR Code Card -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardViewQR"
             android:layout_width="match_parent"

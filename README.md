@@ -52,7 +52,7 @@ Compteur de Taxi is an Android application designed to help taxi drivers manage 
 - Gris Sombre : #343A40
 
 ### Icône de l'Application 🖼️
-- ![Icône de l'application](https://www.flaticon.com/fr/icone-gratuite/taxi_619006?related_id=619127&origin=search)
+- ![Icône de l'application](https://www.flaticon.com/fr/icone-gratuite/taxi_619006?related_i=&k=1734175489084&log-in=google)
 
 ## Technologies Used 🛠️
 - Kotlin

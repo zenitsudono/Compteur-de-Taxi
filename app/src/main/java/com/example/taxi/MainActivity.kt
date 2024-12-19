@@ -15,6 +15,7 @@ import android.os.SystemClock
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import com.example.taxi.databinding.ActivityMainBinding
+import com.example.taxi.utils.NotificationHelper
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
@@ -43,6 +44,11 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, EasyPermissions.Pe
     private var totalDistance = 0.0
     private val handler = Handler(Looper.getMainLooper())
     private var locationCallback: LocationCallback? = null
+    private lateinit var notificationHelper: NotificationHelper
+    private var EndTime = ""
+    private var EndFare = ""
+    private var EndDistance = ""
+
 
     companion object {
         private const val PERMISSION_REQUEST_CODE = 123
@@ -56,6 +62,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, EasyPermissions.Pe
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        notificationHelper = NotificationHelper(this)
 
         setupMap()
         setupLocationServices()
@@ -105,7 +113,11 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, EasyPermissions.Pe
             .setMaxUpdateDelayMillis(2000)
             .build()
 
-        fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback!!, Looper.getMainLooper())
+        fusedLocationClient.requestLocationUpdates(
+            locationRequest,
+            locationCallback!!,
+            Looper.getMainLooper()
+        )
         startTimeUpdates()
     }
 
@@ -116,6 +128,10 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, EasyPermissions.Pe
         locationCallback?.let { fusedLocationClient.removeLocationUpdates(it) }
         handler.removeCallbacksAndMessages(null)
         showRideCompletionNotification()
+         totalDistance
+        notificationHelper.sendFareNotification(
+            EndFare,EndDistance,EndTime
+        )
     }
 
     private fun updateLocation(location: Location) {
@@ -149,18 +165,21 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, EasyPermissions.Pe
         val seconds = ((elapsedMillis % 60000) / 1000).toInt()
         binding.tvTime.text = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds)
         updateFare(minutes.toLong())
+        EndTime = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds)
     }
 
     private fun updateDistanceAndFare() {
         val df = DecimalFormat("#.##")
         binding.tvDistance.text = "${df.format(totalDistance)} km"
         updateFare((SystemClock.elapsedRealtime() - startTime) / 60000)
+        EndDistance = "${df.format(totalDistance)} km"
     }
 
     private fun updateFare(minutes: Long) {
         val fare = BASE_FARE + (totalDistance * PER_KM_RATE) + (minutes * PER_MINUTE_RATE)
         val df = DecimalFormat("#.##")
         binding.tvFare.text = "${df.format(fare)} DH"
+        EndFare = "${df.format(fare)} DH"
     }
 
     private fun createNotificationChannel() {
@@ -181,17 +200,22 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, EasyPermissions.Pe
         val notification = NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_person)
             .setContentTitle(getString(R.string.notification_title))
-            .setContentText(getString(
-                R.string.notification_message,
-                binding.tvFare.text,
-                binding.tvDistance.text,
-                binding.tvTime.text
-            ))
+            .setContentText(
+                getString(
+                    R.string.notification_message,
+                    binding.tvFare.text,
+                    binding.tvDistance.text,
+                    binding.tvTime.text
+                )
+            )
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .build()
 
-        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val notificationManager =
+            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.notify(1, notification)
+
+
     }
 
     @AfterPermissionGranted(PERMISSION_REQUEST_CODE)
@@ -224,7 +248,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, EasyPermissions.Pe
         if (EasyPermissions.hasPermissions(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
             map.isMyLocationEnabled = true
             startLocationUpdates()
-            
+
             // Get last known location
             fusedLocationClient.lastLocation.addOnSuccessListener { location ->
                 location?.let {

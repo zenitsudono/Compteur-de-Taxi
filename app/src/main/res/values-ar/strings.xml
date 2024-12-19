@@ -15,10 +15,15 @@
     <string name="driver_age">العمر</string>
     <string name="license_type">نوع الرخصة</string>
     <string name="scan_qr">مسح رمز QR</string>
+    <string name="stop_ride">إنهاء الرحلة</string>
     <string name="base_fare">التعريفة الأساسية: 2.5 درهم</string>
     <string name="per_km">لكل كم: 1.5 درهم</string>
     <string name="per_minute">لكل دقيقة: 0.5 درهم</string>
     <string name="select_language">اختر اللغة</string>
     <string name="phone_number">رقم الهاتف</string>
     <string name="car_info">معلومات السيارة</string>
+    <string name="tariff_information">معلومات الأجرة</string>
+    <string name="_0_00_dh">0.00 DH</string>
+    <string name="_00_00">00:00</string>
+    <string name="_0_0_km">0.0 كم</string>
 </resources>

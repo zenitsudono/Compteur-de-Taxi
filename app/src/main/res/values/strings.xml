@@ -22,6 +22,10 @@
     <string name="select_language">Select Language</string>
     <string name="phone_number">Phone Number</string>
     <string name="car_info">Car Info</string>
+    <string name="tariff_information">Tariff Information</string>
+    <string name="_0_00_dh">0.00 DH</string>
+    <string name="_00_00">00:00</string>
+    <string name="_0_0_km">0.0 km</string>
     <string-array name="languages">
         <item>English</item>
         <item>Français</item>
